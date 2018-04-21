@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 开发模式(修改struts.xml不用重启服务器） -->
+	<constant name="struts.devMode" value="true" />
+	<package name="common" extends="json-default">
+		<action name="showWithPageSizeAndPageIndexJfb" class="com.wt.action.JFBAction"
+			method="showWithPageSizeAndPageIndexJfb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+		<action name="addJfb" class="com.wt.action.JFBAction" method="addJfb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="updateJfb" class="com.wt.action.JFBAction" method="updateJfb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="deleteJfb" class="com.wt.action.JFBAction" method="deleteJfb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		
+		
+		
+		
+		
+		<action name="showWithPageSizeAndPageIndexJgb" class="com.wt.action.JGBAction"
+			method="showWithPageSizeAndPageIndexJgb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+		<action name="addJgb" class="com.wt.action.JGBAction" method="addJgb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="updateJgb" class="com.wt.action.JGBAction" method="updateJgb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="deleteJgb" class="com.wt.action.JGBAction" method="deleteJgb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		
+		
+		
+		<action name="showWithPageSizeAndPageIndexSblxb" class="com.wt.action.SBLXBAction"
+			method="showWithPageSizeAndPageIndexSblxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+		<action name="addSblxb" class="com.wt.action.SBLXBAction" method="addSblxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="updateSblxb" class="com.wt.action.SBLXBAction" method="updateSblxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="deleteSblxb" class="com.wt.action.SBLXBAction" method="deleteSblxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		
+		<action name="showWithPageSizeAndPageIndexSbztb" class="com.wt.action.SBZTBAction"
+			method="showWithPageSizeAndPageIndexSbztb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+		<action name="addSbztb" class="com.wt.action.SBZTBAction" method="addSbztb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="updateSbztb" class="com.wt.action.SBZTBAction" method="updateSbztb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="deleteSbztb" class="com.wt.action.SBZTBAction" method="deleteSbztb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		
+		
+		
+		
+		<action name="showWithPageSizeAndPageIndexCqb" class="com.wt.action.CQBAction"
+			method="showWithPageSizeAndPageIndexCqb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+		<action name="addCqb" class="com.wt.action.CQBAction" method="addCqb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="updateCqb" class="com.wt.action.CQBAction" method="updateCqb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="deleteCqb" class="com.wt.action.CQBAction" method="deleteCqb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		
+		
+		<action name="showWithPageSizeAndPageIndexSbsylxb" class="com.wt.action.SBSYLXBAction"
+			method="showWithPageSizeAndPageIndexSbsylxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+		<action name="addSbsylxb" class="com.wt.action.SBSYLXBAction" method="addSbsylxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="updateSbsylxb" class="com.wt.action.SBSYLXBAction" method="updateSbsylxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="deleteSbsylxb" class="com.wt.action.SBSYLXBAction" method="deleteSbsylxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		
+		
+		<action name="showWithPageSizeAndPageIndexKhxxb" class="com.wt.action.KHXXBAction"
+			method="showWithPageSizeAndPageIndexKhxxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+		<action name="addKhxxb" class="com.wt.action.KHXXBAction" method="addKhxxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="updateKhxxb" class="com.wt.action.KHXXBAction" method="updateKhxxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="deleteKhxxb" class="com.wt.action.KHXXBAction" method="deleteKhxxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		
+		
+		
+		<action name="showWithPageSizeAndPageIndexSbxxb" class="com.wt.action.SBXXBAction"
+			method="showWithPageSizeAndPageIndexSbxxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+		<action name="addSbxxb" class="com.wt.action.SBXXBAction" method="addSbxxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="updateSbxxb" class="com.wt.action.SBXXBAction" method="updateSbxxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="deleteSbxxb" class="com.wt.action.SBXXBAction" method="deleteSbxxb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		
+		<action name="showWithPageSizeAndPageIndexJhjdkzyb" class="com.wt.action.JHJDKZYBAction"
+			method="showWithPageSizeAndPageIndexJhjdkzyb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+		<action name="addJhjdkzyb" class="com.wt.action.JHJDKZYBAction" method="addJhjdkzyb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="updateJhjdkzyb" class="com.wt.action.JHJDKZYBAction" method="updateJhjdkzyb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<action name="deleteJhjdkzyb" class="com.wt.action.JHJDKZYBAction" method="deleteJhjdkzyb">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json">
+			</result>
+		</action>
+
+
+		<action name="showWithPageSizeAndPageIndexAttackinfoes" class="com.wt.action.AttackinfoesAction"
+			method="showWithPageSizeAndPageIndexAttackinfoes">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+	</package>
+</struts>    

@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>设备信息表</title>
+    <title>端口流量统计表</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,13 +23,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="32x32" href="images/idcms_logo.png">
 
-
 <style type="text/css"> 
 	td {
 		word-wrap:break-word; 
 		word-break:break-all;
 	}  
-</style> 
+</style>
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Editable CSS -->
@@ -46,9 +45,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- toast CSS -->
     <link href="../plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
     
-    <!-- datatimepicker -->
+        <!-- datatimepicker -->
     <link href="../plugins/jQuery-Timepicker/jquery-ui.css" rel="stylesheet" />
     <link href="../plugins/jQuery-Timepicker/jquery-ui-timepicker-addon.css" rel="stylesheet" />
+    
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -90,13 +90,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">设备信息表</h4> </div>
+                        <h4 class="page-title">端口流量统计表</h4> </div>
                     <!-- /.col-lg-12 -->
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="white-box">
-                            <h3 class="box-title">设备信息表</h3> 
+                            <h3 class="box-title">端口流量统计表</h3> 
                             <div id="topPager" class="external-pager jsgrid-pager-container"></div>
                             <label class="form-inline">每页
                                 <select id="showEntries" class="form-control input-sm">
@@ -112,8 +112,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <label class="form-inline">跳转到
                                 <input type="number" id="aimPage" class="form-control" placeholder="请输入您要跳转的页码">页
                                 <a id="goPage" class="btn btn-rounded btn-success pull-right">跳转</a>
-                                
                             </label>
+                            <br>
+                            <label class="form-inline pull-left">时间范围：开始时间
+                                <input type="text" id="starttime" class="form-control" placeholder="请选择开始时间">
+                            </label>
+                            <label class="form-inline pull-left">结束时间
+                                <input type="text" id="endtime" class="form-control" placeholder="请选择结束时间">
+                            </label>
+                            <a id="addFilter" class="btn btn-rounded btn-success pull-left">筛选时间范围</a>
                             <a id="refreshtable" class="btn btn-rounded btn-info  pull-right" ><i class="fa fa-spin fa-refresh"></i>  刷新表格</a>
                             <div id="jsgrid"></div>
                         </div>
@@ -141,22 +148,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.min.js"></script>
     
-    <!-- datatimepicker -->
+        <!-- datatimepicker -->
     <script src="../plugins/jQuery-Timepicker/jquery-ui-sliderAccess.js"></script>
 	<script src="../plugins/jQuery-Timepicker/jquery-ui.js"></script>
 	<script src="../plugins/jQuery-Timepicker/jquery-ui-timepicker-addon.js"></script>
 	<script type="text/javascript" src="../plugins/jQuery-Timepicker/i18n/jquery-ui-timepicker-zh-CN.js"></script>
     
+    
+    
+    
     <!-- Editable -->
-    <script src="../plugins/bower_components/jsgrid/db-sbxxb.js"></script>
     <script type="text/javascript" src="../plugins/bower_components/jsgrid/dist/jsgrid.min.js"></script>
-    <script src="js/jsgrid-init-sbxxb.js"></script>
+    <script src="../plugins/bower_components/jsgrid/db-dataflow.js"></script>
+    <script src="js/jsgrid-init-dataflow.js"></script>
     <!--Style Switcher -->
     <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <script src="../plugins/bower_components/toast-master/js/jquery.toast.js"></script>
-    
-
-    
     <script type="text/javascript">
     	$("#showEntries").change(function(){
     		var size = $("#showEntries").val();
@@ -192,6 +199,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			$.toast({
 			         heading: '已刷新表格',
 			         text: '通过改按钮您可以刷新表格，而无需重新载入页面',
+			         position: 'top-right',
+			         icon: 'info',
+			         textColor: '#fff'
+			     });
+    	});
+    	
+    	
+    	
+    	$('#starttime').datetimepicker({
+                showSecond: true, //显示秒
+                timeFormat: 'HH:mm:ss' //格式化时间
+            });
+       	$('#endtime').datetimepicker({
+                showSecond: true, //显示秒
+                timeFormat: 'HH:mm:ss' //格式化时间
+            });
+        $("#addFilter").click(function(){
+			var pageIndex = $("#jsgrid").jsGrid("option", "pageIndex");
+			$("#jsgrid").jsGrid("openPage",pageIndex);
+						$.toast({
+			         heading: '已按照您限定的日期筛选',
+			         text: '如果不在需要，请清除筛选框输入',
 			         position: 'top-right',
 			         icon: 'info',
 			         textColor: '#fff'

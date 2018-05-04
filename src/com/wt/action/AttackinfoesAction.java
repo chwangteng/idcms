@@ -9,8 +9,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.wt.po.Attackinfoes;
 import com.wt.po.AttackinfoesDAO;
 import com.wt.po.Jfb;
+import com.wt.po.Jhjdkzyb;
 import com.wt.po.Khxxb;
 import com.wt.po.KhxxbDAO;
+import com.wt.po.Sbxxb;
 
 public class AttackinfoesAction {
 	ApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -198,5 +200,43 @@ public class AttackinfoesAction {
 				  endTime, duration, dropSize, size));
 		return "success";
 	}
-	
+	public String addAttackinfoes(){
+		Timestamp t_startTime=null;
+		if((startTime!=null)&&(!"".equals(startTime)))
+			t_startTime=Timestamp.valueOf(startTime);
+		Timestamp t_endTime=null;
+		if((endTime!=null)&&(!"".equals(endTime)))
+			t_endTime=Timestamp.valueOf(endTime);
+		
+		Attackinfoes insertItem=new Attackinfoes(id, status, count,  deftype,  SIp,  t_startTime,
+				 dropCount,  SPortList,  CPortList,  CIpList,  packetType,  t_endTime,
+				 duration,  dropSize,  size);
+		insertItem.setId(id);
+		attackinfoesdao.save(insertItem);
+		return "success";
+	}
+
+	public String updateAttackinfoes(){
+		Timestamp t_startTime=null;
+		if((startTime!=null)&&(!"".equals(startTime)))
+			t_startTime=Timestamp.valueOf(startTime);
+		Timestamp t_endTime=null;
+		if((endTime!=null)&&(!"".equals(endTime)))
+			t_endTime=Timestamp.valueOf(endTime);
+		
+		Attackinfoes updateItem=new Attackinfoes(id, status, count,  deftype,  SIp,  t_startTime,
+				 dropCount,  SPortList,  CPortList,  CIpList,  packetType,  t_endTime,
+				 duration,  dropSize,  size);
+		updateItem.setId(id);
+		attackinfoesdao.merge(updateItem);
+		return "success";
+	}
+
+	public String deleteAttackinfoes(){
+
+		Attackinfoes deleteItem=new Attackinfoes();
+		deleteItem.setId(id);
+		attackinfoesdao.delete(deleteItem);
+		return "success";
+	}
 }

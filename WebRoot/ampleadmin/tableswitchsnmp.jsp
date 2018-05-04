@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>设备信息表</title>
+    <title>该表是保存需要采集流量的设备信息的</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,13 +23,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="32x32" href="images/idcms_logo.png">
 
-
 <style type="text/css"> 
 	td {
 		word-wrap:break-word; 
 		word-break:break-all;
 	}  
-</style> 
+</style>
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Editable CSS -->
@@ -45,11 +44,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link href="css/colors/blue-dark.css" id="theme" rel="stylesheet">
     <!-- toast CSS -->
     <link href="../plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
-    
-    <!-- datatimepicker -->
-    <link href="../plugins/jQuery-Timepicker/jquery-ui.css" rel="stylesheet" />
-    <link href="../plugins/jQuery-Timepicker/jquery-ui-timepicker-addon.css" rel="stylesheet" />
-    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -90,13 +84,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">设备信息表</h4> </div>
+                        <h4 class="page-title">该表是保存需要采集流量的设备信息的</h4> </div>
                     <!-- /.col-lg-12 -->
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="white-box">
-                            <h3 class="box-title">设备信息表</h3> 
+                            <h3 class="box-title">该表是保存需要采集流量的设备信息的</h3> 
                             <div id="topPager" class="external-pager jsgrid-pager-container"></div>
                             <label class="form-inline">每页
                                 <select id="showEntries" class="form-control input-sm">
@@ -112,7 +106,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <label class="form-inline">跳转到
                                 <input type="number" id="aimPage" class="form-control" placeholder="请输入您要跳转的页码">页
                                 <a id="goPage" class="btn btn-rounded btn-success pull-right">跳转</a>
-                                
                             </label>
                             <a id="refreshtable" class="btn btn-rounded btn-info  pull-right" ><i class="fa fa-spin fa-refresh"></i>  刷新表格</a>
                             <div id="jsgrid"></div>
@@ -140,23 +133,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="js/waves.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.min.js"></script>
-    
-    <!-- datatimepicker -->
-    <script src="../plugins/jQuery-Timepicker/jquery-ui-sliderAccess.js"></script>
-	<script src="../plugins/jQuery-Timepicker/jquery-ui.js"></script>
-	<script src="../plugins/jQuery-Timepicker/jquery-ui-timepicker-addon.js"></script>
-	<script type="text/javascript" src="../plugins/jQuery-Timepicker/i18n/jquery-ui-timepicker-zh-CN.js"></script>
-    
     <!-- Editable -->
-    <script src="../plugins/bower_components/jsgrid/db-sbxxb.js"></script>
     <script type="text/javascript" src="../plugins/bower_components/jsgrid/dist/jsgrid.min.js"></script>
-    <script src="js/jsgrid-init-sbxxb.js"></script>
+    <script src="../plugins/bower_components/jsgrid/db-switchsnmp.js"></script>
+    <script src="js/jsgrid-init-switchsnmp.js"></script>
     <!--Style Switcher -->
     <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <script src="../plugins/bower_components/toast-master/js/jquery.toast.js"></script>
-    
-
-    
     <script type="text/javascript">
     	$("#showEntries").change(function(){
     		var size = $("#showEntries").val();

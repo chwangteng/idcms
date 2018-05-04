@@ -1,11 +1,20 @@
 (function() {
 
-	var attackinfoesdb = {
+	var dataflowdb = {
 		loadData : function(filter) {
+
+			if(($("#starttime").val()!=null)&&($("#starttime").val()!="")){
+				filter.starttime=$("#starttime").val();
+			}
+			if(($("#endtime").val()!=null)&&($("#endtime").val()!="")){
+				filter.endtime=$("#endtime").val();
+			}
+
+			//屏蔽了对Integer类型是0的模糊搜索，因为未赋值也会自动转换成0，本系统中Integer都是ID或者外键且外键是其他表的ID,没必要模糊搜索
 			var d = $.Deferred();
 			$.ajax({
 				type : "POST",
-				url : "../showWithPageSizeAndPageIndexAttackinfoes.action",
+				url : "../showWithPageSizeAndPageIndexDataFLow.action",
 				data : JSON.stringify(filter),
 				dataType : "json",
 				contentType: "application/json",
@@ -31,7 +40,7 @@
 		insertItem : function(insertingItem) {
 			$.ajax({
 				type : "POST",
-				url : "../addAttackinfoes.action",
+				url : "../addDataFLow.action",
 				data : JSON.stringify(insertingItem),
 				dataType : "json",
 				contentType: "application/json",
@@ -59,7 +68,7 @@
 		updateItem : function(updatingItem) {
 			$.ajax({
 				type : "POST",
-				url : "../updateAttackinfoes.action",
+				url : "../updateDataFLow.action",
 				data : JSON.stringify(updatingItem),
 				dataType : "json",
 				contentType: "application/json",
@@ -81,7 +90,7 @@
 		deleteItem : function(deletingClient) {
 			$.ajax({
 				type : "POST",
-				url : "../deleteAttackinfoes.action",
+				url : "../deleteDataFLow.action",
 				data : JSON.stringify(deletingClient),
 				dataType : "json",
 				contentType: "application/json",
@@ -101,7 +110,7 @@
 		}
 	};
 
-	window.attackinfoesdb = attackinfoesdb;
+	window.dataflowdb = dataflowdb;
 
 
 }());

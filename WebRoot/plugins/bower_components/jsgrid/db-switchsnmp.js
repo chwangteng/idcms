@@ -1,11 +1,12 @@
 (function() {
 
-	var attackinfoesdb = {
+	var switchsnmpdb = {
 		loadData : function(filter) {
+			//屏蔽了对Integer类型是0的模糊搜索，因为未赋值也会自动转换成0，本系统中Integer都是ID或者外键且外键是其他表的ID,没必要模糊搜索
 			var d = $.Deferred();
 			$.ajax({
 				type : "POST",
-				url : "../showWithPageSizeAndPageIndexAttackinfoes.action",
+				url : "../showWithPageSizeAndPageIndexSwitchSnmp.action",
 				data : JSON.stringify(filter),
 				dataType : "json",
 				contentType: "application/json",
@@ -31,7 +32,7 @@
 		insertItem : function(insertingItem) {
 			$.ajax({
 				type : "POST",
-				url : "../addAttackinfoes.action",
+				url : "../addSwitchSnmp.action",
 				data : JSON.stringify(insertingItem),
 				dataType : "json",
 				contentType: "application/json",
@@ -59,7 +60,7 @@
 		updateItem : function(updatingItem) {
 			$.ajax({
 				type : "POST",
-				url : "../updateAttackinfoes.action",
+				url : "../updateSwitchSnmp.action",
 				data : JSON.stringify(updatingItem),
 				dataType : "json",
 				contentType: "application/json",
@@ -81,7 +82,7 @@
 		deleteItem : function(deletingClient) {
 			$.ajax({
 				type : "POST",
-				url : "../deleteAttackinfoes.action",
+				url : "../deleteSwitchSnmp.action",
 				data : JSON.stringify(deletingClient),
 				dataType : "json",
 				contentType: "application/json",
@@ -101,7 +102,7 @@
 		}
 	};
 
-	window.attackinfoesdb = attackinfoesdb;
+	window.switchsnmpdb = switchsnmpdb;
 
 
 }());

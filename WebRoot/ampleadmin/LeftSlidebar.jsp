@@ -27,7 +27,12 @@
                             <li><a href="javascript:void(0)"><i class="fa-fw">管</i> <span class="hide-menu">日志管理</span></a></li>
                         </ul>
                     </li>
-                    <li><a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-apps fa-fw"></i> <span class="hide-menu">网络流量统计</span></a></li>
+                    <li><a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-apps fa-fw"></i> <span class="hide-menu">网络流量统计<span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="tableswitchsnmp.jsp"><i class="fa-fw">X</i><span class="hide-menu">需采集设备</span></a></li>
+                            <li><a href="tabledataflow.jsp"><i class="fa-fw">D</i><span class="hide-menu">流量数据</span></a></li>
+                        </ul>
+                    </li>
                     
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">网络设备信息管理<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
@@ -54,7 +59,7 @@
                     </li>
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-table fa-fw"></i> <span class="hide-menu">网络监控<span class="fa arrow"></span><span class="label label-rouded label-danger pull-right">9</span></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="javascript:void(0)"><i class="fa-fw">W</i><span class="hide-menu">网络时延</span></a></li>
+                            <li><a href="netlatency.jsp"><i class="fa-fw">W</i><span class="hide-menu">网络时延</span></a></li>
                             <li><a href="javascript:void(0)"><i class="fa-fw">N</i><span class="hide-menu">内存告警信息</span></a></li>
                             <li><a href="javascript:void(0)"><i class="fa-fw">C</i><span class="hide-menu">CPU告警信息</span></a></li>
                         </ul>

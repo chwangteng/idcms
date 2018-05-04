@@ -321,6 +321,99 @@
 			</interceptor-ref>
 			<result name="success" type="json" />
 		</action>
+		
+		<action name="addAttackinfoes" class="com.wt.action.AttackinfoesAction"
+			method="addAttackinfoes">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+		
+		<action name="updateAttackinfoes" class="com.wt.action.AttackinfoesAction"
+			method="updateAttackinfoes">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+		
+		<action name="deleteAttackinfoes" class="com.wt.action.AttackinfoesAction"
+			method="deleteAttackinfoes">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+
+
+		<action name="showWithPageSizeAndPageIndexSwitchSnmp" class="com.wt.action.SwitchSnmpAction"
+			method="showWithPageSizeAndPageIndexSwitchSnmp">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+		<action name="addSwitchSnmp" class="com.wt.action.SwitchSnmpAction"
+			method="addSwitchSnmp">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+		<action name="updateSwitchSnmp" class="com.wt.action.SwitchSnmpAction"
+			method="updateSwitchSnmp">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+		<action name="deleteSwitchSnmp" class="com.wt.action.SwitchSnmpAction"
+			method="deleteSwitchSnmp">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+		<action name="showWithPageSizeAndPageIndexDataFLow" class="com.wt.action.DataFLowAction"
+			method="showWithPageSizeAndPageIndexDataFLow">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+		<action name="addDataFLow" class="com.wt.action.DataFLowAction"
+			method="addDataFLow">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+		<action name="updateDataFLow" class="com.wt.action.DataFLowAction"
+			method="updateDataFLow">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+		<action name="deleteDataFLow" class="com.wt.action.DataFLowAction"
+			method="deleteDataFLow">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
+
+
+		<action name="testping" class="com.wt.action.PingAction"
+			method="testping">
+			<interceptor-ref name="json">
+				<param name="contentType">application/json</param>
+			</interceptor-ref>
+			<result name="success" type="json" />
+		</action>
 
 	</package>
 </struts>    
